@@ -35,8 +35,6 @@ class PomodoroTimer
             playRestartingSound();
 
         }
-
-        Console.WriteLine("Pomodoro session ended. Goodbye!");
     }
 
     static void playBreakStartSound()
