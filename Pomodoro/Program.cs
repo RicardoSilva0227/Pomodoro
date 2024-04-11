@@ -21,7 +21,6 @@ class PomodoroTimer
 
             playBreakStartSound();
 
-
             if ((pomodoroCounter & 3 ) == 0)
             {
                 Console.WriteLine($"Take a {longBreak}-minute break.");
@@ -33,11 +32,8 @@ class PomodoroTimer
                 Thread.Sleep(breakTime * 60 * 1000);
             }
 
-
             playRestartingSound();
 
-
-            
         }
 
         Console.WriteLine("Pomodoro session ended. Goodbye!");
@@ -45,7 +41,6 @@ class PomodoroTimer
 
     static void playBreakStartSound()
     {
-
         string SoundFilePath = "StopBell.wav";
         FileStream Wav_file_stream = File.OpenRead(SoundFilePath);
         WaveStream ws_raw = new WaveFileReader(Wav_file_stream);
@@ -62,7 +57,6 @@ class PomodoroTimer
         {
             Thread.Sleep(100); 
         }
-
 
         Wav_file_stream.Close();
         ws_raw.Close();
