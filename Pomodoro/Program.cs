@@ -6,6 +6,7 @@ class PomodoroTimer
     {
         int workTime = 25;
         int breakTime = 5;
+        int longBreak = 15;
         int pomodoroCounter = 0;
 
         Console.WriteLine("Pomodoro Timer");
@@ -20,10 +21,21 @@ class PomodoroTimer
 
             playBreakStartSound();
 
-            Console.WriteLine($"Take a {breakTime}-minute break.");
-            Thread.Sleep(breakTime * 60 * 1000);
+
+            if ((pomodoroCounter & 3 ) == 0)
+            {
+                Console.WriteLine($"Take a {longBreak}-minute break.");
+                Thread.Sleep(longBreak * 60 * 1000);
+            }
+            else
+            {
+                Console.WriteLine($"Take a {breakTime}-minute break.");
+                Thread.Sleep(breakTime * 60 * 1000);
+            }
+
 
             playRestartingSound();
+
 
             
         }
